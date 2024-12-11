@@ -166,7 +166,7 @@
            &kp Q        &trans       &kp LC(LEFT)    &kp LC(RIGHT)  &kp LA(DEL)      &kp RS(RA(LEFT)) &kp RA(LEFT) &kp RA(DOWN) &kp RA(UP) &kp RA(RIGHT)
         //╰────────────┴────────────┴───────────────┼──────────────┼────────────┤   ├────────────────┼────────────┼────────────┴──────────┴─────────────╯
         //                                          │              │            │   │LANG            │BASE + LANG │
-                                                     &trans         &trans           &HYPER(SPACE)    &blpl SPACE
+                                                     &trans         &trans           HYPER(SPACE)     &blpl SPACE
         //                                          ╰──────────────┴────────────╯   ╰────────────────┴────────────╯
 			>;
 		};
