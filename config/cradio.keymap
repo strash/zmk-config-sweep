@@ -84,13 +84,13 @@
 		tdfsbs: tap_dance_forwardslash_backwardslash {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
-			bindings = <&kp SLASH>, <&kp BSHL>;
+			bindings = <&kp SLASH>, <&kp BSLH>;
 		};
 		// on sym
 		tdcbs: tap_dance_caret_backwardslash {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
-			bindings = <&kp CARET>, <&kp BSHL>;
+			bindings = <&kp CARET>, <&kp BSLH>;
 		};
 		tdmnpl: tap_dance_minus_plus {
 			compatible = "zmk,behavior-tap-dance";
