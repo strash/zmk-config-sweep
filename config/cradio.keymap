@@ -36,8 +36,8 @@
 			compatible = "zmk,behavior-macro";
 			binding-cells = <0>;
 			bindings
-				= <&tog QWE>
-				, <&kp RC(RA(RS(RG(SPACE))))>
+				= <&macro_tap &tog QWE>
+				, <&macro_tap &kp RC(RA(RS(RG(SPACE))))>
 				;
 		};
 	};
