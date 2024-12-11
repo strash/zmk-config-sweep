@@ -148,19 +148,19 @@
 
 		nav_layer {
 			bindings = <
-        //╭────────────┬────────────┬───────────────┬─────────────┬────────────╮   ╭────────────────┬────────────┬────────────┬──────────┬─────────────╮
-        //│history back│history forw│prev tab       │next tab     │remove line │   │SHIFT CMD ←     │SHIFT ←     │SHIFT ↓     │SHIFT ↑   │SHIFT →      │
-           &kp LG(LBKT) &kp LG(RBKT) &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(BSPC)     &kp LS(LG(LEFT)) &kp RS(LEFT) &kp RS(DOWN) &kp RS(UP) &kp RS(RIGHT)
-        //├────────────┼────────────┼───────────────┼─────────────┼────────────┤   ├────────────────┼────────────┼────────────┼──────────┼─────────────┤
-        //│SHIFT TAB   │TAB         │SHIFT          │CMD          │remove word │   │CMD ←           │←           │↓           │↑         │→            │
-           &kp LS(TAB)  &kp TAB      &kp LSHFT       &kp LGUI      &kp LC(BSPC)     &kp RG(LEFT)     &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT
-        //├────────────┼────────────┼───────────────┼─────────────┼────────────┤   ├────────────────┼────────────┼────────────┼──────────┼─────────────┤
-        //│            │            │prev space     │next space   │delele line │   │SHIFT ALT ←     │ALT ←       │ALT ↓       │ALT ↑     │ALT →        │
-           &kp Q        &trans       &kp LC(LEFT)    &kp LC(RIGHT) &kp LA(DEL)      &kp RS(RA(LEFT)) &kp RA(LEFT) &kp RA(DOWN) &kp RA(UP) &kp RA(RIGHT)
-        //╰────────────┴────────────┴───────────────┼─────────────┼────────────┤   ├────────────────┼────────────┼────────────┴──────────┴─────────────╯
-        //                                          │             │            │   │LANG            │BASE + LANG │
-                                                     &trans        &trans           HYPER(SPACE)     &blpl SPACE
-        //                                          ╰─────────────┴────────────╯   ╰────────────────┴────────────╯
+        //╭────────────┬────────────┬───────────────┬─────────────┬────────────╮   ╭─────────────────────────┬────────────┬────────────┬──────────┬─────────────╮
+        //│history back│history forw│prev tab       │next tab     │remove line │   │SHIFT CMD ←              │SHIFT ←     │SHIFT ↓     │SHIFT ↑   │SHIFT →      │
+           &kp LG(LBKT) &kp LG(RBKT) &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(BSPC)     &kp LS(LG(LEFT))          &kp RS(LEFT) &kp RS(DOWN) &kp RS(UP) &kp RS(RIGHT)
+        //├────────────┼────────────┼───────────────┼─────────────┼────────────┤   ├─────────────────────────┼────────────┼────────────┼──────────┼─────────────┤
+        //│SHIFT TAB   │TAB         │SHIFT          │CMD          │remove word │   │CMD ←                    │←           │↓           │↑         │→            │
+           &kp LS(TAB)  &kp TAB      &kp LSHFT       &kp LGUI      &kp LC(BSPC)     &kp RG(LEFT)              &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT
+        //├────────────┼────────────┼───────────────┼─────────────┼────────────┤   ├─────────────────────────┼────────────┼────────────┼──────────┼─────────────┤
+        //│            │            │prev space     │next space   │delele line │   │SHIFT ALT ←              │ALT ←       │ALT ↓       │ALT ↑     │ALT →        │
+           &kp Q        &trans       &kp LC(LEFT)    &kp LC(RIGHT) &kp LA(DEL)      &kp RS(RA(LEFT))          &kp RA(LEFT) &kp RA(DOWN) &kp RA(UP) &kp RA(RIGHT)
+        //╰────────────┴────────────┴───────────────┼─────────────┼────────────┤   ├─────────────────────────┼────────────┼────────────┴──────────┴─────────────╯
+        //                                          │             │            │   │LANG                     │BASE + LANG │
+                                                     &trans        &trans           &kp RC(RA(RS(RG(SPACE)))) &blpl SPACE
+        //                                          ╰─────────────┴────────────╯   ╰─────────────────────────┴────────────╯
 			>;
 		};
 
