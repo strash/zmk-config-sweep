@@ -34,7 +34,7 @@
 	macros = {
 		blpl: base_layer_plus_lang {
 			compatible = "zmk,behavior-macro";
-			binding-cells = <1>;
+			binding-cells = <0>;
 			bindings
 				= <&tog QWE>
 				, <&kp RC(RA(RS(RG(SPACE))))>
