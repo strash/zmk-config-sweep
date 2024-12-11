@@ -31,7 +31,7 @@
 		};
 	};
 
-	macros = {
+	macros {
 		blpl: base_layer_plus_lang {
 			compatible = "zmk,behavior-macro";
 			binding-cells = <0>;
@@ -169,7 +169,7 @@
            &kp LS(TAB)  &kp TAB      &kp LSHFT       &htg LGUI LGUI &kp LC(BSPC)     &kp RG(LEFT)     &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT
         //├────────────┼────────────┼───────────────┼──────────────┼────────────┤   ├────────────────┼────────────┼────────────┼──────────┼─────────────┤
         //│            │            │prev space     │next space    │delele line │   │SHIFT ALT ←     │ALT ←       │ALT ↓       │ALT ↑     │ALT →        │
-           &trans       &trans       &kp LC(LEFT)    &kp LC(RIGHT)  &kp LA(DEL)      &kp RS(RA(LEFT)) &kp RA(LEFT) &kp RA(DOWN) &kp RA(UP) &kp RA(RIGHT)
+           &kp Q        &trans       &kp LC(LEFT)    &kp LC(RIGHT)  &kp LA(DEL)      &kp RS(RA(LEFT)) &kp RA(LEFT) &kp RA(DOWN) &kp RA(UP) &kp RA(RIGHT)
         //╰────────────┴────────────┴───────────────┼──────────────┼────────────┤   ├────────────────┼────────────┼────────────┴──────────┴─────────────╯
         //                                          │              │            │   │LANG            │BASE + LANG │
                                                      &trans         &trans           &HYPER(SPACE)    &blpl SPACE
