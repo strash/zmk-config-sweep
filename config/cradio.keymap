@@ -49,10 +49,10 @@
 		};
 		// on nav
 		htg: hold_toggle {
-			compatible = "zmk,.behavior-hold-tap";
+			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			flavor = "balanced";
-			bindings = <&kp &kt>;
+			bindings = <&kp>, <&kt>;
 		};
 		// on qwe
 		tdpg: tap_dance_p_grave {
