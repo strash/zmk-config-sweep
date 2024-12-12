@@ -148,10 +148,10 @@
            &kp LS(TAB)  &kp TAB      &kp LSHFT       &kp LGUI      &kp LC(BSPC)     &kp RG(LEFT)     &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT
         //├────────────┼────────────┼───────────────┼─────────────┼────────────┤   ├────────────────┼────────────┼────────────┼──────────┼─────────────┤
         //│            │            │prev space     │next space   │delele line │   │SHIFT ALT ←     │ALT ←       │ALT ↓       │ALT ↑     │ALT →        │
-           &kp Q        &trans       &kp LC(LEFT)    &kp LC(RIGHT) &kp LA(DEL)      &kp RS(RA(LEFT)) &kp RA(LEFT) &kp RA(DOWN) &kp RA(UP) &kp RA(RIGHT)
+           &kp Q        &none        &kp LC(LEFT)    &kp LC(RIGHT) &kp LA(DEL)      &kp RS(RA(LEFT)) &kp RA(LEFT) &kp RA(DOWN) &kp RA(UP) &kp RA(RIGHT)
         //╰────────────┴────────────┴───────────────┼─────────────┼────────────┤   ├────────────────┼────────────┼────────────┴──────────┴─────────────╯
         //                                          │             │            │   │LANG            │BASE + LANG │
-                                                     &trans        &trans           HYPER(SPACE)     &blpl
+                                                     &none         &none            HYPER(SPACE)     &blpl
         //                                          ╰─────────────┴────────────╯   ╰────────────────┴────────────╯
 			>;
 		};
@@ -171,7 +171,7 @@
            &kp LBRC   &kp RBRC   &tdmnpl    &kp EQUAL  &tdtdgr        &kp SLASH  &kp LBKT  &kp RBKT   &kp LPAR   &kp RPAR
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │_         │MEDIA     │   │          │          │
-                                            &kp UNDER  &tog 4         &trans     &trans
+                                            &kp UNDER  &tog 4         &none      &none
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
 			>;
 		};
@@ -180,13 +180,13 @@
 			bindings = <
         //╭─────────────┬──────────┬──────────────┬──────────────┬──────────────────╮   ╭──────────┬──────────┬────────────┬────────────┬──────────╮
         //│web inspector│          │video capture │screen to file│screen to buffer  │   │ESC       │pause/play│mute        │            │          │
-           &kp LA(LG(I)) &trans     &kp LS(LG(N5)) &kp LS(LG(N4)) &kp LC(LS(LG(N4)))     &kp ESC    &kp C_PP   &kp C_MUTE   &trans       &trans
+           &kp LA(LG(I)) &none      &kp LS(LG(N5)) &kp LS(LG(N4)) &kp LC(LS(LG(N4)))     &kp ESC    &kp C_PP   &kp C_MUTE   &none        &none
         //├─────────────┼──────────┼──────────────┼──────────────┼──────────────────┤   ├──────────┼──────────┼────────────┼────────────┼──────────┤
         //│             │          │brightness ↓  │brightness ↑  │copy              │   │BACKSPACE │prev track│volume ↓    │volume ↑    │next track│
-           &trans        &trans     &kp C_BRI_DN   &kp C_BRI_UP   &kp LG(C)              &kp BSPC   &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT
+           &none         &none      &kp C_BRI_DN   &kp C_BRI_UP   &kp LG(C)              &kp BSPC   &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT
         //├─────────────┼──────────┼──────────────┼──────────────┼──────────────────┤   ├──────────┼──────────┼────────────┼────────────┼──────────┤
         //│←            │↓         │↑             │→             │paste             │   │          │←         │↓           │↑           │→         │
-           &kp LEFT      &kp DOWN   &kp UP         &kp RIGHT      &kp LG(P)              &trans     &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT
+           &kp LEFT      &kp DOWN   &kp UP         &kp RIGHT      &kp LG(P)              &none      &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT
         //╰─────────────┴──────────┴──────────────┼──────────────┼──────────────────┤   ├──────────┼──────────┼────────────┴────────────┴──────────╯
         //                                        │MEDIA         │SPACE             │   │ENTER     │MEDIA     │
                                                    &tog 4         &kp SPACE              &kp ENTER  &tog 4
