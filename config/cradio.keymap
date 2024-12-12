@@ -24,7 +24,7 @@
 			bindings = <&caps_word>;
 		};
 		combo_symbol_plus {
-			layers = <3>
+			layers = <3>;
 			slow-release;
 			key-positions = <22 23>;
 			bindings = <&kp PLUS>;
