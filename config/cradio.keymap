@@ -186,7 +186,7 @@
            &none         &none      &kp C_BRI_DN   &kp C_BRI_UP   &kp LG(C)              &kp BSPC   &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT
         //├─────────────┼──────────┼──────────────┼──────────────┼──────────────────┤   ├──────────┼──────────┼────────────┼────────────┼──────────┤
         //│←            │↓         │↑             │→             │paste             │   │          │←         │↓           │↑           │→         │
-           &kp LEFT      &kp DOWN   &kp UP         &kp RIGHT      &kp LG(P)              &none      &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT
+           &kp LEFT      &kp DOWN   &kp UP         &kp RIGHT      &kp LG(V)              &none      &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT
         //╰─────────────┴──────────┴──────────────┼──────────────┼──────────────────┤   ├──────────┼──────────┼────────────┴────────────┴──────────╯
         //                                        │MEDIA         │SPACE             │   │ENTER     │MEDIA     │
                                                    &tog 4         &kp SPACE              &kp ENTER  &tog 4
