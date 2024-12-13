@@ -11,20 +11,14 @@
 / {
 	combos {
 		compatible = "zmk,combos";
-		combo_space_enter {
+		combo_space_enter_media {
 			layers = <0 1 4>;
 			slow-release;
 			key-positions = <31 32>;
 			bindings = <&tog 4>;
 		};
-		combo_gfurak_caps_word {
-			layers = <0>;
-			slow-release;
-			key-positions = <12 17>;
-			bindings = <&caps_word>;
-		};
-		combo_qwerty_caps_word {
-			layers = <1>;
+		combo_shifts_caps_word {
+			layers = <0 1>;
 			slow-release;
 			key-positions = <12 17>;
 			bindings = <&caps_word>;
