@@ -92,16 +92,16 @@
 		gfurak_layer {
 			bindings = <
         //╭──────────┬──────────┬──────────┬─────────┬───────────────╮   ╭───────────────┬──────────┬──────────┬──────────┬──────────╮
-        //│G         │F         │U         │P        │,              │   │B              │C         │M         │H         │L         │
-           &kp G      &kp F      &kp U      &kp P     &kp COMMA           &kp B           &kp C      &kp M      &kp H      &kp L
+        //│G         │F         │U         │X        │Q              │   │B              │C         │M         │P         │L         │
+           &kp G      &kp F      &kp U      &kp X     &kp Q               &kp B           &kp C      &kp M      &kp P      &kp L
         //├──────────┼──────────┼──────────┼─────────┼───────────────┤   ├───────────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │caps word+│         │               │   │               │          │+caps word│          │          │ combo
         //│          │OPT       │SHIFT     │CMD      │               │   │               │CMD       │SHIFT     │OPT       │          │ hold
         //│O         │A         │E         │I        │Y              │   │D              │S         │T         │N         │R         │
            &kp O      HRML(A,    E,         I)        &kp Y               &kp D           HRMR(S,    T,         N)         &kp R
         //├──────────┼──────────┼──────────┼─────────┼───────────────┤   ├───────────────┼──────────┼──────────┼──────────┼──────────┤
-        //│Q         │X         │Z         │.        │'              │   │;              │W         │V         │K         │J         │
-           &kp Q      &kp X      &kp Z      &kp DOT   &kp SQT             &kp SEMI        &kp W      &kp V      &kp K      &kp J
+        //│,         │.         │J         │K        │'              │   │;              │W         │V         │H         │Z         │
+           &kp COMMA  &kp DOT    &kp J      &kp K     &kp SQT             &kp SEMI        &kp W      &kp V      &kp H      &kp Z
         //╰──────────┴──────────┴──────────┼─────────┼───────────────┤   ├───────────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │         │               MEDIA               │          │                                  combo
         //                                 │NAV      │               │   │               │SYM       │                                  hold layer
