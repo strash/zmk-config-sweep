@@ -8,6 +8,13 @@
 // hyper
 #define HYPER(k) &kp RC(RA(RS(RG(k))))
 
+&lt {
+	// flavor = "tap-preferred";
+	// tapping-term-ms = <220>;
+	quick-tap-ms = <150>;
+	require-prior-idle-ms = <100>;
+};
+
 / {
 	combos {
 		compatible = "zmk,combos";
@@ -175,8 +182,8 @@
 		media_layer {
 			bindings = <
         //╭─────────────┬──────────┬──────────────┬──────────────┬──────────────────╮   ╭──────────┬──────────┬────────────┬────────────┬──────────╮
-        //│web inspector│          │video capture │screen to file│screen to buffer  │   │ESC       │pause/play│mute        │            │          │
-           &kp LA(LG(I)) &none      &kp LS(LG(N5)) &kp LS(LG(N4)) &kp LC(LS(LG(N4)))     &kp ESC    &kp C_PP   &kp C_MUTE   &none        &none
+        //│web inspector│          │video capture │screen to file│screen to buffer  │   │ESC       │pause/play│mute        │            │BT        │
+           &kp LA(LG(I)) &none      &kp LS(LG(N5)) &kp LS(LG(N4)) &kp LC(LS(LG(N4)))     &kp ESC    &kp C_PP   &kp C_MUTE   &none        &mo 5
         //├─────────────┼──────────┼──────────────┼──────────────┼──────────────────┤   ├──────────┼──────────┼────────────┼────────────┼──────────┤
         //│             │          │brightness ↓  │brightness ↑  │copy              │   │BACKSPACE │prev track│volume ↓    │volume ↑    │next track│
            &none         &none      &kp C_BRI_DN   &kp C_BRI_UP   &kp LG(C)              &kp BSPC   &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT
@@ -187,6 +194,24 @@
         //                                        │MEDIA         │SPACE             │   │ENTER     │MEDIA     │
                                                    &tog 4         &kp SPACE              &kp ENTER  &tog 4
         //                                        ╰──────────────┴──────────────────╯   ╰──────────┴──────────╯
+			>;
+		};
+
+		bluetooth_layer {
+			bindings = <
+        //╭─────────────┬─────────────┬─────────────┬──────────────┬─────────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│bt 1 off     │bt 2 off     │bt 3 off     │bt 4 off      │bt 5 off     │   │          │          │          │          │          │
+           &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3  &bt BT_DISC 5     &none      &none      &none      &none      &none
+        //├─────────────┼─────────────┼─────────────┼──────────────┼─────────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│bt 1 on      │bt 2 on      │bt 3 on      │bt 4 on       │bt 5 on      │   │          │          │          │          │          │
+           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4      &none      &none      &none      &none      &none
+        //├─────────────┼─────────────┼─────────────┼──────────────┼─────────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│             │             │             │              │             │   │          │          │          │          │          │
+           &none         &none         &none         &none          &none             &none      &none      &none      &none      &none
+        //╰─────────────┴─────────────┴─────────────┼──────────────┼─────────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                          │clear all     │clear current│   │          │          │
+                                                     &bt BT_CLR_ALL &bt BT_CLR        &none      &none
+        //                                          ╰──────────────┴─────────────╯   ╰──────────┴──────────╯
 			>;
 		};
 	};
