@@ -12,7 +12,7 @@
 	// flavor = "tap-preferred";
 	// tapping-term-ms = <220>;
 	quick-tap-ms = <150>;
-	require-prior-idle-ms = <100>;
+	// require-prior-idle-ms = <100>;
 };
 
 / {
@@ -81,6 +81,7 @@
 			#binding-cells = <0>;
 			bindings = <&kp SLASH>, <&kp BSLH>;
 		};
+
 		// on sym
 		tdcbs: tap_dance_caret_backwardslash {
 			compatible = "zmk,behavior-tap-dance";
@@ -96,19 +97,19 @@
 
 	keymap {
 		compatible = "zmk,keymap";
-		gfurak_layer {
+		fyou_layer {
 			bindings = <
         //╭──────────┬──────────┬──────────┬─────────┬───────────────╮   ╭───────────────┬──────────┬──────────┬──────────┬──────────╮
-        //│G         │F         │U         │X        │Q              │   │B              │C         │M         │P         │L         │
-           &kp G      &kp F      &kp U      &kp X     &kp Q               &kp B           &kp C      &kp M      &kp P      &kp L
+        //│F         │Y         │O         │U        │;              │   │B              │C         │M         │P         │L         │
+           &kp F      &kp Y      &kp O      &kp U     &kp SEMI            &kp B           &kp C      &kp M      &kp P      &kp L
         //├──────────┼──────────┼──────────┼─────────┼───────────────┤   ├───────────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │caps word+│         │               │   │               │          │+caps word│          │          │ combo
         //│          │OPT       │SHIFT     │CMD      │               │   │               │CMD       │SHIFT     │OPT       │          │ hold
-        //│O         │A         │E         │I        │Y              │   │D              │S         │T         │N         │R         │
-           &kp O      HRML(A,    E,         I)        &kp Y               &kp D           HRMR(S,    T,         N)         &kp R
+        //│H         │I         │E         │A        │X              │   │D              │S         │T         │N         │R         │
+           &kp H      HRML(I,    E,         A)        &kp X               &kp D           HRMR(S,    T,         N)         &kp R
         //├──────────┼──────────┼──────────┼─────────┼───────────────┤   ├───────────────┼──────────┼──────────┼──────────┼──────────┤
-        //│,         │.         │J         │K        │'              │   │;              │W         │V         │H         │Z         │
-           &kp COMMA  &kp DOT    &kp J      &kp K     &kp SQT             &kp SEMI        &kp W      &kp V      &kp H      &kp Z
+        //│,         │.         │J         │K        │'              │   │G              │W         │V         │Q         │Z         │
+           &kp COMMA  &kp DOT    &kp J      &kp K     &kp SQT             &kp G           &kp W      &kp V      &kp Q      &kp Z
         //╰──────────┴──────────┴──────────┼─────────┼───────────────┤   ├───────────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │         │               MEDIA               │          │                                  combo
         //                                 │NAV      │               │   │               │SYM       │                                  hold layer
@@ -170,11 +171,11 @@
            &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4  &kp KP_N5      &kp KP_N6  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_N0
         //├──────────┼──────────┼────────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │            │          │~ `       │   │          │          │          │          │          │ tap dance
-        //│{         │}         │-           │=         │          │   │/         │[         │]         │(         │)         │
-           &kp LBRC   &kp RBRC   &kp KP_MINUS &kp EQUAL  &tdtdgr        &kp SLASH  &kp LBKT  &kp RBKT   &kp LPAR   &kp RPAR
+        //│{         │}         │-           │+         │          │   │/         │[         │]         │(         │)         │
+           &kp LBRC   &kp RBRC   &kp KP_MINUS &kp PLUS   &tdtdgr        &kp SLASH  &kp LBKT  &kp RBKT   &kp LPAR   &kp RPAR
         //╰──────────┴──────────┴────────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                   │_         │+         │   │          │          │
-                                              &kp UNDER  &kp PLUS       &none      &none
+        //                                   │_         │=         │   │          │          │
+                                              &kp UNDER  &kp EQUAL      &none      &none
         //                                   ╰──────────┴──────────╯   ╰──────────┴──────────╯
 			>;
 		};
