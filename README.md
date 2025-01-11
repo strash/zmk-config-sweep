@@ -1,3 +1,3 @@
 # ZMK Ferris Sweep
 
-![5x3+2](https://github.com/user-attachments/assets/c0ad121d-fd74-40a8-ba1a-dfb060e8dce6)
+![5x3+2](https://github.com/user-attachments/assets/10f071e8-ffd6-4abc-a45d-c7b77583e373)
