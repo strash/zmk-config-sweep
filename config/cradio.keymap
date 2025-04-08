@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 // Home row mods macro
 #define HRML(k1, k2, k3) &hrm LALT k1  &hrm LSHFT k2  &hrm LGUI k3
@@ -209,8 +210,8 @@
 //│bt 1 on      │bt 2 on      │bt 3 on      │bt 4 on      │bt 5 on      │   │          │             │          │          │          │
    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &none      &none         &none      &none      &none
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├──────────┼─────────────┼──────────┼──────────┼──────────┤
-//│             │             │prefer ble   │prefer usb   │             │   │          │             │          │          │          │
-   &none         &none         &out OUT_BLE  &out OUT_USB  &none             &none      &none         &none      &none      &none
+//│             │             │prefer usb   │prefer ble   │             │   │          │             │          │          │          │
+   &none         &none         &out OUT_USB  &out OUT_BLE  &none             &none      &none         &none      &none      &none
 //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├──────────┼─────────────┼──────────┴──────────┴──────────╯
 //                                          │             │             │   │          │clear current│
 											 &none         &none             &none      &bt BT_CLR
