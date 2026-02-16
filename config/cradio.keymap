@@ -91,8 +91,8 @@
 //├────────────┼──────────┼──────────┼──────────┼───────────────┤   ├───────────────┼──────────┼──────────┼──────────┼──────────┤
 //│            │          │          │caps word+│               │   │               │+caps word│          │          │          │ combo
 //│            │OPT       │CMD       │SHIFT     │               │   │               │SHIFT     │CMD       │OPT       │          │ hold
-//│H           │I         │A         │E         │-              │   │G              │S         │T         │N         │L         │
-   &kp H   HRML(I,         A,         E)         &kp MINUS           &kp G      HRMR(S,         T,         N)         &kp L
+//│H           │I         │E         │A         │-              │   │G              │S         │T         │N         │L         │
+   &kp H   HRML(I,         E,         A)         &kp MINUS           &kp G      HRMR(S,         T,         N)         &kp L
 //├────────────┼──────────┼──────────┼──────────┼───────────────┤   ├───────────────┼──────────┼──────────┼──────────┼──────────┤
 //│J           │Q         │.         │,         │;              │   │X              │W         │B         │F         │V         │
    &kp J        &kp Q      &kp DOT    &kp COMMA  &kp SEMI            &kp X           &kp W      &kp B      &kp F      &kp V
