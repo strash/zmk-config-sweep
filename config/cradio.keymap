@@ -4,8 +4,8 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // Home row mods macro
-#define HRML(k1, k2, k3) &hrm LALT k1  &hrm LSHFT k2  &hrm LGUI k3
-#define HRMR(k1, k2, k3) &hrm RGUI k1  &hrm RSHFT k2  &hrm RALT k3
+#define HRML(k1, k2, k3) &hrm LALT k1  &hrm LGUI k2  &hrm LSHFT k3
+#define HRMR(k1, k2, k3) &hrm RSHFT k1  &hrm RGUI k2  &hrm RALT k3
 // hyper
 #define HYPER(k) &kp RC(RA(RS(RG(k))))
 
@@ -30,7 +30,7 @@
 		combo_shifts_caps_word {
 			layers = <0 1>;
 			slow-release;
-			key-positions = <12 17>;
+			key-positions = <13 16>;
 			bindings = <&caps_word>;
 		};
 	};
@@ -64,11 +64,6 @@
 			#binding-cells = <0>;
 			bindings = <&kp P>, <&kp SQT>;
 		};
-		tdmrb: tap_dance_m_right_bracket {
-			compatible = "zmk,behavior-tap-dance";
-			#binding-cells = <0>;
-			bindings = <&kp M>, <&kp LBKT>;
-		};
 		tdmlb: tap_dance_m_left_bracket {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
@@ -84,64 +79,52 @@
 			#binding-cells = <0>;
 			bindings = <&kp SLASH>, <&kp BSLH>;
 		};
-
-		// on sym
-		tdcbs: tap_dance_caret_backwardslash {
-			compatible = "zmk,behavior-tap-dance";
-			#binding-cells = <0>;
-			bindings = <&kp CARET>, <&kp BSLH>;
-		};
-		tdtdgr: tap_dance_tilde_grave {
-			compatible = "zmk,behavior-tap-dance";
-			#binding-cells = <0>;
-			bindings = <&kp TILDE>, <&kp GRAVE>;
-		};
 	};
 
 	keymap {
 		compatible = "zmk,keymap";
 		fyou_layer {
 			bindings = <
-//╭──────────┬──────────┬──────────┬─────────┬───────────────╮   ╭───────────────┬──────────┬──────────┬──────────┬──────────╮
-//│X         │Y         │O         │U        │'              │   │G              │C         │L         │P         │M         │
-   &kp X      &kp Y      &kp O      &kp U     &kp SQT             &kp G           &kp C      &kp L      &kp P      &kp M
-//├──────────┼──────────┼──────────┼─────────┼───────────────┤   ├───────────────┼──────────┼──────────┼──────────┼──────────┤
-//│          │          │caps word+│         │               │   │               │          │+caps word│          │          │ combo
-//│          │OPT       │SHIFT     │CMD      │               │   │               │CMD       │SHIFT     │OPT       │          │ hold
-//│H         │I         │E         │A        │.              │   │D              │S         │T         │N         │R         │
-   &kp H      HRML(I,    E,         A)        &kp DOT             &kp D           HRMR(S,    T,         N)         &kp R
-//├──────────┼──────────┼──────────┼─────────┼───────────────┤   ├───────────────┼──────────┼──────────┼──────────┼──────────┤
-//│;         │Z         │J         │K        │'              │   │B              │W         │F         │V         │Q         │
-   &kp SEMI   &kp Z      &kp J      &kp K     &kp COMMA           &kp B           &kp W      &kp F      &kp V      &kp Q
-//╰──────────┴──────────┴──────────┼─────────┼───────────────┤   ├───────────────┼──────────┼──────────┴──────────┴──────────╯
-//                                 │         │               MEDIA               │          │                                  combo
-//                                 │NAV      │               │   │               │SYM       │                                  hold layer
-//                                 │ESC      │SPACE          │   │ENTER          │BACKSPACE │
-									&lt 2 ESC &mt LCTRL SPACE     &mt RCTRL ENTER &lt 3 BSPC
-//                                 ╰─────────┴───────────────╯   ╰───────────────┴──────────╯
+//╭────────────┬──────────┬──────────┬──────────┬───────────────╮   ╭───────────────┬──────────┬──────────┬──────────┬──────────╮
+//│K           │Y         │O         │U         │'              │   │Z              │C         │D         │P         │M         │
+   &kp K        &kp Y      &kp O      &kp U      &kp SQT             &kp Z           &kp C      &kp D      &kp P      &kp M
+//├────────────┼──────────┼──────────┼──────────┼───────────────┤   ├───────────────┼──────────┼──────────┼──────────┼──────────┤
+//│            │          │          │caps word+│               │   │               │+caps word│          │          │          │ combo
+//│            │OPT       │CMD       │SHIFT     │               │   │               │SHIFT     │CMD       │OPT       │          │ hold
+//│H           │I         │A         │E         │-              │   │G              │S         │T         │N         │L         │
+   &kp H   HRML(I,         A,         E)         &kp MINUS           &kp G      HRMR(S,         T,         N)         &kp L
+//├────────────┼──────────┼──────────┼──────────┼───────────────┤   ├───────────────┼──────────┼──────────┼──────────┼──────────┤
+//│J           │Q         │.         │,         │;              │   │X              │W         │B         │F         │V         │
+   &kp J        &kp Q      &kp DOT    &kp COMMA  &kp SEMI            &kp X           &kp W      &kp B      &kp F      &kp V
+//╰────────────┴──────────┴──────────┼──────────┼───────────────┤   ├───────────────┼──────────┼──────────┴──────────┴──────────╯
+//                                   │          │               MEDIA               │          │                                  combo
+//                                   │NAV       │               │   │               │SYM       │                                  hold layer
+//                                   │ESC       │SPACE          │   │ENTER          │R         │
+								  	  &lt 2 ESC  &mt LCTRL SPACE     &mt RCTRL ENTER &lt 3 R
+//                                   ╰──────────┴───────────────╯   ╰───────────────┴──────────╯
 			>;
 		};
 
 		qwerty_layer {
 			bindings = <
-//╭──────────┬──────────┬──────────┬─────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-//│          │          │          │         │          │   │          │          │          │          │P '       │ tap dance
-//│Q         │W         │E         │R        │T         │   │Y         │U         │I         │O         │          │
-   &kp Q      &kp W      &kp E      &kp R     &kp T          &kp Y      &kp U      &kp I      &kp O      &tdpg
-//├──────────┼──────────┼──────────┼─────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-//│          │          │caps word+│         │          │   │          │          │+caps word│          │          │ combo
-//│          │OPT       │SHIFT     │CMD      │          │   │          │CMD       │SHIFT     │OPT       │          │ hold
-//│A         │S         │D         │F        │G         │   │H         │J         │K         │L         │;         │
-   &kp A      HRML(S,    D,         F)        &kp G          &kp H      HRMR(J,    K,         L)         &kp SEMI
-//├──────────┼──────────┼──────────┼─────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-//│          │          │          │         │          │   │          │M [       │, ]       │          │/ \       │ tap dance
-//│Z         │X         │C         │V        │B         │   │N         │          │          │.         │          │
-   &kp Z      &kp X      &kp C      &kp V     &kp B          &kp N      &tdmlb     &tdcrb     &kp DOT    &tdfsbs
-//╰──────────┴──────────┴──────────┼─────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-//                                 │NAV      │          │   │          │SYM       │                                  hold layer
-//                                 │ESC      │SPACE     │   │ENTER     │BACKSPACE │
-									&lt 2 ESC &kp SPACE      &kp ENTER  &lt 3 BSPC
-//                                 ╰─────────┴──────────╯   ╰──────────┴──────────╯
+//╭───────────┬──────────┬──────────┬──────────┬──────────╮   ╭───────────┬──────────┬──────────┬──────────┬──────────╮
+//│           │          │          │          │          │   │           │          │          │          │P '       │ tap dance
+//│Q          │W         │E         │R         │T         │   │Y          │U         │I         │O         │          │
+   &kp Q       &kp W      &kp E      &kp R      &kp T          &kp Y       &kp U      &kp I      &kp O      &tdpg
+//├───────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼──────────┼──────────┼──────────┼──────────┤
+//│           │          │          │caps word+│          │   │           │+caps word│          │          │          │ combo
+//│           │OPT       │CMD       │SHIFT     │          │   │           │SHIFT     │CMD       │OPT       │          │ hold
+//│A          │S         │D         │F         │G         │   │H          │J         │K         │L         │;         │
+   &kp A  HRML(S,         D,         F)         &kp G          &kp H  HRMR(J,         K,         L)         &kp SEMI
+//├───────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼──────────┼──────────┼──────────┼──────────┤
+//│           │          │          │          │          │   │           │M [       │, ]       │          │/ \       │ tap dance
+//│Z          │X         │C         │V         │B         │   │N          │          │          │.         │          │
+   &kp Z       &kp X      &kp C      &kp V      &kp B          &kp N       &tdmlb     &tdcrb     &kp DOT    &tdfsbs
+//╰───────────┴──────────┴──────────┼──────────┼──────────┤   ├───────────┼──────────┼──────────┴──────────┴──────────╯
+//                                  │NAV       │          │   │           │SYM       │                                  hold layer
+//                                  │ESC       │SPACE     │   │ENTER      │BACKSPACE │
+									 &lt 2 ESC  &kp SPACE      &kp ENTER   &lt 3 BSPC
+//                                  ╰──────────┴──────────╯   ╰───────────┴──────────╯
 			>;
 		};
 
@@ -151,8 +134,8 @@
 //│history back│history forw│prev tab       │next tab     │remove line │   │SHIFT CMD ←     │SHIFT ←     │SHIFT ↓     │SHIFT ↑   │SHIFT →      │
    &kp LG(LBKT) &kp LG(RBKT) &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(BSPC)     &kp LS(LG(LEFT)) &kp RS(LEFT) &kp RS(DOWN) &kp RS(UP) &kp RS(RIGHT)
 //├────────────┼────────────┼───────────────┼─────────────┼────────────┤   ├────────────────┼────────────┼────────────┼──────────┼─────────────┤
-//│SHIFT TAB   │TAB         │SHIFT          │CMD          │remove word │   │CMD ←           │←           │↓           │↑         │→            │
-   &kp LS(TAB)  &kp TAB      &kp LSHFT       &kp LGUI      &kp LA(BSPC)     &kp RG(LEFT)     &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT
+//│SHIFT TAB   │TAB         │CMD            │SHIFT        │remove word │   │BACKSPACE       │←           │↓           │↑         │→            │
+   &kp LS(TAB)  &kp TAB      &kp LGUI        &kp LSHFT     &kp LA(BSPC)     &kp BSPC         &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT
 //├────────────┼────────────┼───────────────┼─────────────┼────────────┤   ├────────────────┼────────────┼────────────┼──────────┼─────────────┤
 //│            │            │prev space     │next space   │delele line │   │SHIFT ALT ←     │ALT ←       │ALT ↓       │ALT ↑     │ALT →        │
    &kp Q        &none        &kp LC(LEFT)    &kp LC(RIGHT) &kp LA(DEL)      &kp RS(RA(LEFT)) &kp RA(LEFT) &kp RA(DOWN) &kp RA(UP) &kp RA(RIGHT)
@@ -166,19 +149,18 @@
 		sym_layer {
 			bindings = <
 //╭──────────┬──────────┬────────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-//│          │          │            │          │          │   │^ \       │          │          │          │          │ tap dance
-//│!         │@         │#           │$         │%         │   │          │&         │|         │*         │?         │
-   &kp EXCL   &kp AT     &kp HASH     &kp DLLR   &kp PRCNT      &tdcbs     &kp AMPS   &kp PIPE   &kp STAR   &kp QMARK
+//│          │          │            │          │          │   │          │          │          │          │          │ tap dance
+//│|         │&         │{           │}         │$         │   │%         │(         │)         │@         │#         │
+   &kp PIPE   &kp AMPS   &kp LBRC     &kp RBRC   &kp DLLR       &kp PRCNT  &kp LPAR   &kp RPAR   &kp AT     &kp HASH
 //├──────────┼──────────┼────────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
 //│1         │2         │3           │4         │5         │   │6         │7         │8         │9         │0         │
    &kp KP_N1  &kp KP_N2  &kp KP_N3    &kp KP_N4  &kp KP_N5      &kp KP_N6  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_N0
 //├──────────┼──────────┼────────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-//│          │          │            │          │~ `       │   │          │          │          │          │          │ tap dance
-//│{         │}         │-           │+         │          │   │/         │[         │]         │(         │)         │
-   &kp LBRC   &kp RBRC   &kp KP_MINUS &kp PLUS   &tdtdgr        &kp SLASH  &kp LBKT  &kp RBKT   &kp LPAR   &kp RPAR
+//│~         │^         │!           │?         │+         │   │/         │[         │]         │`         │\         │
+   &kp TILDE  &kp CARET  &kp EXCL     &kp QMARK  &kp PLUS       &kp FSLH   &kp LBKT   &kp RBKT   &kp GRAVE  &kp BSLH
 //╰──────────┴──────────┴────────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-//                                   │_         │=         │   │          │          │
-									  &kp UNDER  &kp EQUAL      &none      &none
+//                                   │*         │=         │   │          │          │
+									  &kp STAR   &kp EQUAL      &none      &none
 //                                   ╰──────────┴──────────╯   ╰──────────┴──────────╯
 			>;
 		};
