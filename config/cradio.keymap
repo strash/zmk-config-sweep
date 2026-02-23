@@ -57,6 +57,15 @@
 			require-prior-idle-ms = <100>;
 			bindings = <&kp>, <&kp>;
 		};
+		lt_kp: hold_layer_tap_key {
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <2>;
+			flavor = "tap-preferred";
+			tapping-term-ms = <220>;
+			quick-tap-ms = <150>;
+			require-prior-idle-ms = <100>;
+			binding = <&mo>, <&kp>;
+		};
 
 		// on qwe
 		tdpg: tap_dance_p_grave {
@@ -100,7 +109,7 @@
 //                                   │          │               MEDIA               │          │                                  combo
 //                                   │NAV       │               │   │               │SYM       │                                  hold layer
 //                                   │ESC       │SPACE          │   │ENTER          │R         │
-								  	  &lt 2 ESC  &mt LCTRL SPACE     &mt RCTRL ENTER &lt 3 R
+								  	  &lt 2 ESC  &mt LCTRL SPACE     &mt RCTRL ENTER &lt_kp 3 R
 //                                   ╰──────────┴───────────────╯   ╰───────────────┴──────────╯
 			>;
 		};
