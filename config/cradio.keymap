@@ -88,6 +88,11 @@
 			#binding-cells = <0>;
 			bindings = <&kp SLASH>, <&kp BSLH>;
 		};
+		tdgmin: tap_dance_g_minus {
+			compatible = "zmk,behavior-tap-dance";
+			#binding-cell = <0>;
+			bindings = <&kp G>, <&kp MINUS>;
+		};
 	};
 
 	keymap {
@@ -121,6 +126,7 @@
 //│Q          │W         │E         │R         │T         │   │Y          │U         │I         │O         │          │
    &kp Q       &kp W      &kp E      &kp R      &kp T          &kp Y       &kp U      &kp I      &kp O      &tdpg
 //├───────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼──────────┼──────────┼──────────┼──────────┤
+//│           │          │          │          │G -       │   │           │          │          │          │          │ tap dance
 //│           │          │          │caps word+│          │   │           │+caps word│          │          │          │ combo
 //│           │OPT       │CMD       │SHIFT     │          │   │           │SHIFT     │CMD       │OPT       │          │ hold
 //│A          │S         │D         │F         │G         │   │H          │J         │K         │L         │;         │
@@ -139,19 +145,20 @@
 
 		nav_layer {
 			bindings = <
-//╭────────────┬────────────┬───────────────┬─────────────┬────────────╮   ╭────────────────┬────────────┬────────────┬──────────┬─────────────╮
-//│history back│history forw│prev tab       │next tab     │remove line │   │SHIFT CMD ←     │SHIFT ←     │SHIFT ↓     │SHIFT ↑   │SHIFT →      │
-   &kp LG(LBKT) &kp LG(RBKT) &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(BSPC)     &kp LS(LG(LEFT)) &kp RS(LEFT) &kp RS(DOWN) &kp RS(UP) &kp RS(RIGHT)
-//├────────────┼────────────┼───────────────┼─────────────┼────────────┤   ├────────────────┼────────────┼────────────┼──────────┼─────────────┤
-//│SHIFT TAB   │TAB         │CMD            │SHIFT        │remove word │   │BACKSPACE       │←           │↓           │↑         │→            │
-   &kp LS(TAB)  &kp TAB      &kp LGUI        &kp LSHFT     &kp LA(BSPC)     &kp BSPC         &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT
-//├────────────┼────────────┼───────────────┼─────────────┼────────────┤   ├────────────────┼────────────┼────────────┼──────────┼─────────────┤
-//│            │            │prev space     │next space   │delele line │   │SHIFT ALT ←     │ALT ←       │ALT ↓       │ALT ↑     │ALT →        │
-   &kp Q        &none        &kp LC(LEFT)    &kp LC(RIGHT) &kp LA(DEL)      &kp RS(RA(LEFT)) &kp RA(LEFT) &kp RA(DOWN) &kp RA(UP) &kp RA(RIGHT)
-//╰────────────┴────────────┴───────────────┼─────────────┼────────────┤   ├────────────────┼────────────┼────────────┴──────────┴─────────────╯
-//                                          │             │            │   │LANG            │BASE + LANG │
-											 &none         &none            HYPER(SPACE)     &blpl
-//                                          ╰─────────────┴────────────╯   ╰────────────────┴────────────╯
+//╭────────────┬────────────┬───────────────┬────────────────┬────────────╮   ╭────────────────┬────────────┬────────────┬──────────┬─────────────╮
+//│history back│history forw│prev tab       │next tab        │remove line │   │SHIFT CMD ←     │SHIFT ←     │SHIFT ↓     │SHIFT ↑   │SHIFT →      │
+   &kp LG(LBKT) &kp LG(RBKT) &kp LC(LS(TAB)) &kp LC(TAB)      &kp LG(BSPC)     &kp LS(LG(LEFT)) &kp RS(LEFT) &kp RS(DOWN) &kp RS(UP) &kp RS(RIGHT)
+//├────────────┼────────────┼───────────────┼────────────────┼────────────┤   ├────────────────┼────────────┼────────────┼──────────┼─────────────┤
+//│            │            │CMD            │SHIFT           │            │   │                │            │            │          │             │ hold
+//│SHIFT TAB   │TAB         │page down      │page up         │remove word │   │BACKSPACE       │←           │↓           │↑         │→            │
+   &kp LS(TAB)  &kp TAB      &hms LGUI PG_DN &hms LSHFT PG_UP &kp LA(BSPC)     &kp BSPC         &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT
+//├────────────┼────────────┼───────────────┼────────────────┼────────────┤   ├────────────────┼────────────┼────────────┼──────────┼─────────────┤
+//│            │            │prev space     │next space      │delele line │   │SHIFT ALT ←     │ALT ←       │ALT ↓       │ALT ↑     │ALT →        │
+   &kp HOME     &kp END      &kp LC(LEFT)    &kp LC(RIGHT)    &kp LA(DEL)      &kp RS(RA(LEFT)) &kp RA(LEFT) &kp RA(DOWN) &kp RA(UP) &kp RA(RIGHT)
+//╰────────────┴────────────┴───────────────┼────────────────┼────────────┤   ├────────────────┼────────────┼────────────┴──────────┴─────────────╯
+//                                          │                │            │   │LANG            │BASE + LANG │
+											 &none            &none            HYPER(SPACE)     &blpl
+//                                          ╰────────────────┴────────────╯   ╰────────────────┴────────────╯
 			>;
 		};
 
