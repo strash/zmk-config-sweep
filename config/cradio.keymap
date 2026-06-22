@@ -150,8 +150,8 @@
    &kp LG(LBKT) &kp LG(RBKT) &kp LC(LS(TAB)) &kp LC(TAB)      &kp LG(BSPC)     &kp LS(LG(LEFT)) &kp RS(LEFT) &kp RS(DOWN) &kp RS(UP) &kp RS(RIGHT)
 //├────────────┼────────────┼───────────────┼────────────────┼────────────┤   ├────────────────┼────────────┼────────────┼──────────┼─────────────┤
 //│            │            │CMD            │SHIFT           │            │   │                │            │            │          │             │ hold
-//│SHIFT TAB   │TAB         │page down      │page up         │remove word │   │BACKSPACE       │←           │↓           │↑         │→            │
-   &kp LS(TAB)  &kp TAB      &hms LGUI PG_DN &hms LSHFT PG_UP &kp LA(BSPC)     &kp BSPC         &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT
+//│SHIFT TAB   │TAB         │PAGE DOWN      │PAGE UP         │remove word │   │BACKSPACE       │←           │↓           │↑         │→            │
+   &kp LS(TAB)  &kp TAB      &hrm LGUI PG_DN &hrm LSHFT PG_UP &kp LA(BSPC)     &kp BSPC         &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT
 //├────────────┼────────────┼───────────────┼────────────────┼────────────┤   ├────────────────┼────────────┼────────────┼──────────┼─────────────┤
 //│            │            │prev space     │next space      │delele line │   │SHIFT ALT ←     │ALT ←       │ALT ↓       │ALT ↑     │ALT →        │
    &kp HOME     &kp END      &kp LC(LEFT)    &kp LC(RIGHT)    &kp LA(DEL)      &kp RS(RA(LEFT)) &kp RA(LEFT) &kp RA(DOWN) &kp RA(UP) &kp RA(RIGHT)
