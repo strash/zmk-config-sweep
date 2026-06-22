@@ -90,7 +90,7 @@
 		};
 		tdgmin: tap_dance_g_minus {
 			compatible = "zmk,behavior-tap-dance";
-			#binding-cell = <0>;
+			#binding-cells = <0>;
 			bindings = <&kp G>, <&kp MINUS>;
 		};
 	};
